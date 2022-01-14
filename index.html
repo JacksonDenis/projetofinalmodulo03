@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Individual Jackson Denis - JS </title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <section class="header">
+        <nav class="d-flex">
+            <ul class="d-flex">
+                <li class="logo">
+                    <img src="img/logo.svg" alt="">
+                </li>
+                <li class="navtext">
+                    <p>Controle Financeiro</p>
+                </li>
+                <li id="mobile-menu">
+                    <img src="img/mobile-menu.svg" alt="" onclick="abrirSideNav()">
+                </li>
+                <li class="menu">
+                    <a class="opcao" id="fecharNavbar" onclick="fecharSideNav()">
+                        <img src="img/sidebar-close-btn.svg" alt="">
+                    </a>
+                    <a href="#" class="opcao" onclick='focusForm()'>Cadastro de transações</a>
+                    <a class="opcao" onclick="clearTransaction()">Limpar dados</a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+
+    <main>
+        <section class="transacao">
+            <p class="novaTransacao">Nova Transação</p>
+            <form class="transacaoForm" onsubmit="subimitForm(event)">
+                <div class="d-flex tipodetransacao">
+                    <label class="formularioLabel label" for="acaoMercadoria d-flex">Tipo de Transação</label>
+                    <select class="selectInput acaoMercadoria" name="acaoMercadoria" form="acaoMercadoria">
+                        <option value="compra">Compra</option>
+                        <option value="venda">Venda</option>
+                    </select>
+                </div>
+
+                <div class="d-flex mercadoria">
+                    <label class="formularioLabel label" for="nomeMercadoria d-flex">Nome da Mercadoria</label>
+                    <input type="text" name="nomeMercadoria" class="textInput nomeMercadoria" placeholder="Descrição">
+                </div>
+
+                <div class="d-flex valor">
+                    <label class="formularioLabel label" for="valorInput d-flex">Valor</label>
+                    <input type="text" name="valorInput" class="textInput valorInput" placeholder="R$ 0,00" onkeypress="formatMoney(event)">
+                </div>
+
+                <div class="d-flex botao">
+                    <input class="btnSubmit" type="submit" value="Adicionar Transação">
+                </div>
+
+            </form>
+        </section>
+
+        <hr class="hr-linha">
+
+        <section class="extrato">
+
+            <h1 class="d-flex titulo">Extrato de Transações</h1>
+
+            <div class="d-flex tabelaColunas">
+                <p class="textoTabela colunaMercadoria">Mercadoria</p>
+                <p class="textoTabela colunaValor">Valor</p>
+            </div>
+
+            <div id="todasTransacoes" style="padding: 0;">
+            </div>
+        </section>
+    </main>
+
+    <section class="footer">
+        <footer>
+
+        </footer>
+    </section>
+
+    <script src="js/index.js"></script>
+    <script src="js/form.js"></script>
+</body>
+
+</html>
