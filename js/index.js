@@ -95,7 +95,7 @@ function subimitForm(e){
 	transactionType = document.querySelector('select[name="acaoMercadoria"]');
 
 	if(!transactionName.value){
-		let avisoPrencher = confirm("Preencha o nome da mercadoria");
+		confirm("Preencha o nome da mercadoria");
 		transactionName.focus();
 		return;
 	}
