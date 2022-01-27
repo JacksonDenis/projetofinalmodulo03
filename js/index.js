@@ -1,3 +1,5 @@
+//correção apos feedback
+
 function abrirSideNav() {
 	document.getElementsByClassName("menu")[0].classList.add("openMenu")
 }
@@ -93,6 +95,7 @@ function subimitForm(e){
 	transactionType = document.querySelector('select[name="acaoMercadoria"]');
 
 	if(!transactionName.value){
+		let avisoPrencher = confirm("Preencha o nome da mercadoria");
 		transactionName.focus();
 		return;
 	}
