@@ -65,7 +65,7 @@ async function drawTable(){
 		<div class="linha d-flex">
 		<p class="acaoTransacao">${transactions[item].transType == "compra" ? "-" : "+"}</p>
 		<p class="textoTabela linhaMercadoria">${transactions[item].transName}</p>
-		<p class="textoTabela linhaValor">${formatter.format(transactions[item].transCurrency.toString().replace(/([0-9]{2})$/g, ".$1"))}</p>
+		<p class="textoTabela linhaValor">${formatter.format(transactions[item].transCurrency.toString().replace(/([0-9]{1,2})$/g, ".$1"))}</p>
 		</div>
 		</div>`
 	}
@@ -77,7 +77,7 @@ async function drawTable(){
 		<p class="textoTabela linhaTotal">Total</p>
 		<div class="total">
 		<p class="textoTabela linhaTotalValor">
-		${formatter.format(total.toString().replace(/([0-9]{2})$/g, ".$1"))}
+		${formatter.format(total.toString().replace(/([0-9]{1,2})$/g, ".$1"))}
 		</p>
 		<p class="lucro">[${Math.sign(total) == 1 ? "LUCRO" : "PREJUÍZO"}]</p>
 		</div>
